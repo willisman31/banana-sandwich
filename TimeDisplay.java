@@ -22,7 +22,11 @@ public class TimeDisplay {
 		int hours = this.length / 3600;
 		int minutes = this.length / 60;
 		int seconds = this.length;
-		String temp = hours + ":" + minutes + ":" + seconds;
+		String temp = "";
+		if (this.length >= 3600) {
+			temp += hours + ":";
+		}
+		temp += minutes + ":" + seconds;
 		return temp;
 	}
 	
@@ -31,13 +35,17 @@ public class TimeDisplay {
 	 * @param length in seconds.
 	 * @return String of formatted time.
 	 */
-	public String getTime(int length) {
+	static String getTime(int length) {
 		int hours = length / 3600;
 		int minutes = length / 60;
 		int seconds = length;
-		String temp = hours + ":" + minutes + ":" + seconds;
+		String temp = "";
+		if (length >= 3600) {
+			temp += hours + ":";
+		}
+		temp += minutes + ":" + seconds;
 		return temp;
-}
+	}
 	
 	/**
 	 * Length getter.
@@ -45,6 +53,15 @@ public class TimeDisplay {
 	 */
 	public int getLength() {
 		return this.length;
+	}
+	
+	/**
+	 * Default print statement.
+	 */
+	@Override
+	public String toString() {
+		String temp = getTime(this.getLength());
+		return temp;
 	}
 	
 }

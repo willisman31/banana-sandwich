@@ -8,7 +8,9 @@ public class Song {
 	// What attributes would a song have?
 	private int length; // in seconds
 	private boolean like; // does the user like the song
-	private String artist, album, title, filePath;
+	private Artist artist;
+	private Album album;
+	private String title, filePath;
 	private Genre genre;
 	
 	
@@ -32,10 +34,11 @@ public class Song {
 	 * @param filePath to song.
 	 */
 	public Song(String title, int length, String filePath) {
+		// TODO
 		this.length = length;
 		this.title = new String(title);
 		this.genre = null;
-		this.artist = "Unknown";
+		this.artist = new Artist();
 		this.album = null;
 		this.like = false;
 		this.filePath = new String(filePath);
@@ -49,10 +52,11 @@ public class Song {
 	 * @param length of song in seconds.
 	 * @param filePath to song.
 	 */
-	public Song(String title, String artist, String album, int length, String filePath) {
+	public Song(String title, Artist artist, Album album, int length, String filePath) {
+		// TODO
 		this.title = new String(title);
-		this.artist = new String(artist);
-		this.album = new String(album);
+		this.artist = new Artist(artist);
+		this.album = new Album(album);
 		this.length = length;
 		this.filePath = new String(filePath);
 		this.genre = null;
@@ -68,10 +72,11 @@ public class Song {
 	 * @param length of song in seconds.
 	 * @param filePath to song.
 	 */
-	public Song(String title, String artist, String album, Genre genre, int length, String filePath) {
+	public Song(String title, Artist artist, Album album, Genre genre, int length, String filePath) {
+		// TODO
 		this.title = new String(title);
-		this.artist = new String(artist);
-		this.album = new String(album);
+		this.artist = new Artist(artist);
+		this.album = new Album(album);
 		this.genre = genre;
 		this.length = length;
 		this.filePath = new String(filePath);
@@ -90,7 +95,7 @@ public class Song {
 	 * Artist getter.
 	 * @return artist attribute.
 	 */
-	public String getArtist() {
+	public Artist getArtist() {
 		return this.artist;
 	}
 	
@@ -98,7 +103,7 @@ public class Song {
 	 * Album getter.
 	 * @return album attribute.
 	 */
-	public String getAlbum() {
+	public Album getAlbum() {
 		return this.album;
 	}
 	
@@ -149,5 +154,13 @@ public class Song {
 		this.like = true;
 	}
 	
+	/**
+	 * Default print statement.
+	 */
+	public String toString() {
+		String temp = this.getTitle() + "/t/t/t";
+		temp += TimeDisplay.getTime(this.getLength());
+		return temp;
+	}
 	
 }

@@ -13,6 +13,10 @@ public enum Genre {
 	JAZZ,
 	CLASSICAL,
 	FOLK,
+	HIPHOP,
+	OLDIES,
+	LATIN,
+	ALT,
 	OTHER;
 	
 	

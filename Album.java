@@ -7,7 +7,8 @@ import java.util.ArrayList;
 public class Album {
 
 	private ArrayList<Song> contents = new ArrayList<Song>();
-	private String name, artist;
+	private String name; 
+	private Artist artist;
 	private int length;
 	
 	/**
@@ -21,12 +22,23 @@ public class Album {
 	}
 	
 	/**
+	 * Copy constructor.
+	 * @param album to be copied.
+	 */
+	Album(Album album) {
+		this.contents = album.getContents();
+		this.artist = album.getArtist();
+		this.name = album.getName();
+		this.length = album.getLength();
+	}
+	
+	/**
 	 * Three-arg constructor.
 	 * @param name of album.
 	 * @param artist of album.
 	 * @param songs in album.
 	 */
-	Album(String name, String artist, ArrayList<Song> songs) {
+	Album(String name, Artist artist, ArrayList<Song> songs) {
 		this.contents = songs;
 		this.artist = artist;
 		this.name = name;
@@ -49,8 +61,57 @@ public class Album {
 	 * Artist getter.
 	 * @return artist attribute.
 	 */
-	String getArtist() {
+	Artist getArtist() {
 		return this.artist;
+	}
+	
+	/**
+	 * Length getter.
+	 * @return unformatted length.
+	 */
+	int getLength() {
+		return this.length;
+	}
+	
+	/**
+	 * Formats album length.
+	 * @return formatted album length.
+	 */
+	String getFormattedLength() {
+		return TimeDisplay.getTime(this.length);
+	}
+	
+	/**
+	 * Add song to album.
+	 * @param song to be added.
+	 * @return whether add was successful.
+	 */
+	boolean add(Song song) {
+		try {
+			contents.add(song);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	/**
+	 * ArrayList getter for all songs in album.
+	 * @return all songs in album.
+	 */
+	private ArrayList<Song> getContents() {
+		return this.contents;
+	}
+	
+	/**
+	 * Default print statement.
+	 */
+	public String toString() {
+		String temp = this.getName();
+		for (Song song : this.contents) {
+			temp += song.toString() + "/n";
+		}
+		return temp;
 	}
 	
 }
