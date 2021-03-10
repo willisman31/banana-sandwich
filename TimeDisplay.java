@@ -1,3 +1,4 @@
+package logic;
 /**
  * Display formatted time.
  * @author Willis

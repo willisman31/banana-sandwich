@@ -1,3 +1,4 @@
+package logic;
 /**
  * Genre enum.
  * @author Willis

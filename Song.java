@@ -1,3 +1,5 @@
+package logic;
+
 /**
  * Song Class.
  * @author Willis
