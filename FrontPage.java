@@ -1,7 +1,6 @@
 package gui;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 /**
  * Front Page class.
  * @author Willis
@@ -16,7 +15,6 @@ public class FrontPage extends Page {
 	private JButton artists;
 	private JButton songs;
 	private JButton genres;
-	private JTextField search;
 	
 	/**
 	 * Default GUI constructor for Front Page.

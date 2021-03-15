@@ -1,5 +1,6 @@
 package gui;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 /**
  * Page class for all GUI pages in this project.
  * @author Willis
@@ -8,6 +9,7 @@ import javax.swing.JFrame;
 public class Page extends JFrame{
 
 	private static final long serialVersionUID = 1L;
+	private JTextField search;
 	
 	/**
 	 * Default constructor.
