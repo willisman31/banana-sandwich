@@ -3,7 +3,7 @@ package logic;
 /**
  * Song Class.
  * @author Willis
- * Updated 3/5/2021
+ * Updated 3/18/2021
  */
 public class Song {
 
@@ -155,6 +155,16 @@ public class Song {
 	public void like() {
 		this.like = true;
 	}
+	
+	// TODO
+	public void play() {}
+	// TODO
+	public void pause() {}
+	// TODO
+	public void skip() {}
+	// TODO
+	public void reverse() {}
+	
 	
 	/**
 	 * Default print statement.
